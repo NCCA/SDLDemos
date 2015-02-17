@@ -1,0 +1,13 @@
+CosSine.cpp:158:3: error: no matching function for call to 'drawLine'
+                drawLine(screen,cx,cy,cx,WINDOW_HEIGHT);
+                ^~~~~~~~
+CosSine.cpp:91:6: note: candidate function not viable: requires 8 arguments, but 5 were provided
+void drawLine(
+     ^
+CosSine.cpp:159:3: error: no matching function for call to 'drawLine'
+                drawLine(screen,cx,cy,WINDOW_WIDTH,cy);
+                ^~~~~~~~
+CosSine.cpp:91:6: note: candidate function not viable: requires 8 arguments, but 5 were provided
+void drawLine(
+     ^
+2 errors generated.
