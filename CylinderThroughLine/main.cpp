@@ -1,10 +1,4 @@
 #include <SDL.h>
-#ifdef LINUX
-	#include <GL/gl.h>
-#endif
-#ifdef DARWIN
-	#include <OpenGL/gl.h>
-#endif
 #include <string>
 #include <ngl/Vec3.h>
 #include <ngl/Util.h>

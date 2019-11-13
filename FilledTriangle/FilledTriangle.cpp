@@ -8,7 +8,7 @@ clang++ -Wall -g FilledTriangle.cpp -o FilledTriangle `sdl-config --cflags --lib
 to compile the program
 */
 
-#include <SDL/SDL.h>
+#include <SDL.h>
 #include <cstdlib>
 #include <iostream>
 

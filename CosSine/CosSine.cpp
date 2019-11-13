@@ -148,6 +148,7 @@ void drawLine(
 	std::vector<int> sinTable;
 	cosTable.resize(360);
 	sinTable.resize(360);
+	bool m_animate=false;
 	// now we loop until the quit flag is set to true
 	int r=200;
 	while(!quit)
@@ -164,13 +165,15 @@ void drawLine(
 
 		float x = r*cos(angle*(M_PI/180.0)) + cx;
 		float y = r*sin(angle*(M_PI/180.0)) + cy;
-
-		cosTable.insert(cosTable.begin(),int(x));
-		sinTable.insert(sinTable.begin(),int(y));
-		cosTable.pop_back();
-		sinTable.pop_back();
-		if(angle++ == 360)
-			angle=0;
+		if(m_animate == true)
+		{
+			cosTable.insert(cosTable.begin(),int(x));
+			sinTable.insert(sinTable.begin(),int(y));
+			cosTable.pop_back();
+			sinTable.pop_back();
+			if(angle++ == 360)
+				angle=0;
+		}
 		drawLine(screen,x,y,cx,cy,255,255,0);
 		// draw the sine line
 		drawLine(screen,x,cy,x,y,0,255,0);
@@ -184,7 +187,6 @@ void drawLine(
 		{
 			drawBlock(screen,cx+r+i,sinTable[i],0,255,0);
 			drawBlock(screen,cosTable[i],cy+r+i,255,0,0);
-
 
 		}
 
@@ -209,6 +211,7 @@ void drawLine(
 						case SDLK_ESCAPE :  quit = true; break;
 						case SDLK_r : ++r; break;
 						case SDLK_e : --r; break;
+						case SDLK_SPACE : m_animate ^=true; break;
 						default : break;
 					}
 				}
